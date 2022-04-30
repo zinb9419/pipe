@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 23:37:43 by ziloughm          #+#    #+#             */
-/*   Updated: 2022/04/20 14:56:57 by ziloughm         ###   ########.fr       */
+/*   Updated: 2022/04/30 02:51:45 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,9 @@ void	ft_exec_pros1(int fd, int *end, char **av, char **env)
 	if (dup2(end[1], STDOUT_FILENO) < 0)
 		ft_error("DUP2 child 1 OUTPUT", 1);
 	close(end[0]);
+	close(end[1]);
 	close(fd);
-	ft_execve(av, env, 2);
+	ft_execve(av[2], env);
 }
 
 void	ft_exec_pros2(int fd, int *end, char **av, char **env)
@@ -86,6 +87,7 @@ void	ft_exec_pros2(int fd, int *end, char **av, char **env)
 	if (dup2(fd, STDOUT_FILENO) < 0)
 		ft_error("DUP2 child 2 OUTPUT", 1);
 	close(end[1]);
+	close(end[0]);
 	close(fd);
-	ft_execve(av, env, 3);
+	ft_execve(av[3], env);
 }

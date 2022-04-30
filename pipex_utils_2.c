@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 13:27:17 by ziloughm          #+#    #+#             */
-/*   Updated: 2022/04/20 18:21:45 by ziloughm         ###   ########.fr       */
+/*   Updated: 2022/04/30 02:14:00 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	ft_exe_cmd(char	*c, char **cmd, char **env)
 		ft_error(" ", 1);
 }
 
-void	ft_execve(char **av, char **env, int i)
+void	ft_execve(char *av, char **env)
 {
 	char	**paths;
 	char	**cmd;
@@ -47,9 +47,9 @@ void	ft_execve(char **av, char **env, int i)
 	int		j;
 
 	paths = ft_getpaths(env);
-	cmd = ft_split(av[i], ' ');
+	cmd = ft_split(av, ' ');
 	j = 0;
-	ft_chek_cmd_path(cmd, paths, av[i]);
+	ft_chek_cmd_path(cmd, paths, av);
 	if (!access(cmd[0], F_OK | X_OK))
 		ft_exe_cmd(cmd[0], cmd, env);
 	while (paths[j])

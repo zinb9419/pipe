@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:54:15 by ziloughm          #+#    #+#             */
-/*   Updated: 2022/04/21 23:10:17 by ziloughm         ###   ########.fr       */
+/*   Updated: 2022/04/30 02:05:37 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,5 @@ int	main(int ac, char **av, char **env)
 	fds[0] = open(av[1], O_RDONLY);
 	fds[1] = open(av[4], O_CREAT | O_RDWR | O_TRUNC, 0644);
 	pipex(fds, av, env);
-	//system("leaks pipex");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ziloughm <ziloughm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 16:24:09 by ziloughm          #+#    #+#             */
-/*   Updated: 2022/04/20 22:50:33 by ziloughm         ###   ########.fr       */
+/*   Updated: 2022/04/30 02:14:12 by ziloughm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlcat(void *dest, const void *src, size_t n);
 char	*ft_strrchr(const char *str, int c);
-void	ft_execve(char **av, char **env, int i);
+void	ft_execve(char *av, char **env);
 void	ft_exec_pros1(int fd, int *end, char **av, char **env);
 void	ft_exec_pros2(int fd, int *end, char **av, char **env);
 void	pipex(int *fds, char **av, char **env);
